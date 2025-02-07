@@ -90,6 +90,9 @@ async function getSummary(text, retryCount = 0) {
         content: `Please summarize the following text in exactly 6 bullet points and nothing else:
         • First 3 bullets: Main key points and core summary
         • Last 3 bullets: Additional interesting details or context
+        • Do not include any other text or formatting
+        • Number the bullets with a number and a period
+        • Output only 6 bullet points with no other text or formatting
         
         Text to summarize:
         ${text}`
