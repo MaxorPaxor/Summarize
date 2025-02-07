@@ -1,0 +1,8 @@
+# .gitignore
+config.js
+secrets.js
+*.env
+.DS_Store
+node_modules/
+dist/
+build/ 
