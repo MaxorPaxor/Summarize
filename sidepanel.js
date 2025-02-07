@@ -1,5 +1,4 @@
-// For development, hardcode the API key
-const API_KEY = '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';
+import { API_KEY } from './keys.js';
 
 let allBulletPoints = [];
 
@@ -84,11 +83,16 @@ async function getSummary(text, retryCount = 0) {
     messages: [
       {
         role: "system",
-        content: "You are a helpful assistant that provides concise summaries in bullet points."
+        content: "You are a helpful assistant that provides structured summaries. Always provide exactly 6 bullet points: first 3 bullets for main key points, followed by 3 bullets for additional interesting details."
       },
       {
         role: "user",
-        content: `Summarize the following text in exactly 6 clear bullet points:\n\n${text}`
+        content: `Please summarize the following text in exactly 6 bullet points and nothing else:
+        • First 3 bullets: Main key points and core summary
+        • Last 3 bullets: Additional interesting details or context
+        
+        Text to summarize:
+        ${text}`
       }
     ],
     temperature: 0.5,

@@ -1,18 +1,18 @@
 {
   "manifest_version": 3,
   "name": "Web Page Summarizer",
-  "version": "1.0",
-  "description": "Summarizes web pages using DeepSeek AI",
+  "version": "1.0.0",
+  "description": "Transform any webpage into 6 concise bullet points using AI. Get the essence of articles in seconds with key insights and interesting details.",
+  "author": "m4x.mona@gmail.com",
   "permissions": [
     "activeTab",
     "scripting",
-    "storage",
     "sidePanel",
     "tabs"
   ],
+
   "host_permissions": [
-    "https://*/*",
-    "http://*/*",
+    "<all_urls>",
     "https://openrouter.ai/*",
     "https://pagead2.googlesyndication.com/*"
   ],
@@ -26,12 +26,15 @@
   "side_panel": {
     "default_path": "sidepanel.html"
   },
+  "web_accessible_resources": [{
+    "resources": ["keys.js"],
+    "matches": ["<all_urls>"]
+  }],
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "options_page": "options.html",
   "background": {
     "service_worker": "background.js"
   }
